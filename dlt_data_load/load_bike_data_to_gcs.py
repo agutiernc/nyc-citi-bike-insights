@@ -13,6 +13,7 @@ YEARS = [19, 20, 23]
 def download_citi_data(year):
     url = f"https://s3.amazonaws.com/tripdata/20{year}-citibike-tripdata.zip"
     tables = []
+    
     try:
         response = requests.get(url, stream=True)
         response.raise_for_status()
@@ -66,7 +67,7 @@ for year in YEARS:
         progress="tqdm"
     )
 
-    print("Success! Uploaded parquet to gcs!")
+    print("Success! Uploaded parquet to GCS!")
     print("Pausing for 10 seconds")
 
     time.sleep(10)

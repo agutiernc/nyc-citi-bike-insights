@@ -4,3 +4,13 @@ dlt_data_load/.dlt
 testing_dlt_load.py
 venv
 .DS_Store
+
+# ===== for dbt =======
+# you shouldn't commit these into source control
+# these are the default directory names, adjust/add to fit your needs
+target/
+dbt_packages/
+logs/
+
+# legacy -- renamed to dbt_packages in v1
+dbt_modules/

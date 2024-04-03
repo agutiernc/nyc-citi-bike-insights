@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: citi_bike_rides
+    columns:
+      - name: ride_id
+        tests:
+          - unique
+          - not_null
+      - name: start_time_date
+        description: '{{ doc("start_time_and_date_description") }}'
+      - name: stop_time_date
+        description: '{{ doc("stop_time_and_date_description") }}'
+      - name: start_station_name
+        tests:
+          - not_null
+      - name: end_station_name
+        tests:
+          - not_null
+      - name: user_category
+        tests:
+          - accepted_values:
+              values: ['Member', 'Non-Member']
+      - name: trip_duration_seconds
+        tests:
+          - not_null

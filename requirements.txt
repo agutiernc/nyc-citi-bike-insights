@@ -1,4 +1,3 @@
 dlt[filesystem]>=0.4.4
 dlt[gs]
 dlt[parquet]
-polars

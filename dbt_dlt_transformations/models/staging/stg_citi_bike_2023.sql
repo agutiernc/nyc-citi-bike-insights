@@ -1,0 +1,18 @@
+{{ config(materialized='view') }}
+
+-- Select the relevant columns from the 2023 data source and perform any necessary transformations
+
+select  
+   -- identifiers
+   {{ dbt.safe_cast("ride_id", api.Column.translate_type("string")) }} as ride_id,
+   {{ dbt.safe_cast("start_station_name", api.Column.translate_type("string")) }} as start_station_name,
+   {{ dbt.safe_cast("end_station_name", api.Column.translate_type("string")) }} as stop_station_name,
+
+   -- macro
+   {{ get_user_category("member_casual")}} as user_category,
+
+   -- timestamps
+   cast(started_at as timestamp) as start_time_date,
+   cast(ended_at as timestamp) as stop_time_date,
+
+from {{ source('citi_bike_data', 'bike_trips_2023') }}
