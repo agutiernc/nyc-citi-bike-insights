@@ -23,13 +23,13 @@ models:
       
       - name: start_time_date
         data_type: timestamp
-        description: '{{ doc("start_time_and_date_description") }}'
+        description: ""
         tests:
           - not_null
 
       - name: stop_time_date
         data_type: timestamp
-        description: '{{ doc("stop_time_and_date_description") }}'
+        description: ""
         tests:
           - not_null
 
@@ -38,7 +38,7 @@ models:
         tests:
           - not_null
 
-      - name: end_station_name
+      - name: stop_station_name
         data_type: string
         tests:
           - not_null
@@ -55,7 +55,7 @@ models:
               values: ['Member', 'Non-Member']
               severity: warn
 
-- name: stg_citi_bike_2020
+  - name: stg_citi_bike_2020
     columns:
       - name: ride_id
         data_type: string
@@ -67,13 +67,13 @@ models:
       
       - name: start_time_date
         data_type: timestamp
-        description: '{{ doc("start_time_and_date_description") }}'
+        description: ""
         tests:
           - not_null
 
       - name: stop_time_date
         data_type: timestamp
-        description: '{{ doc("stop_time_and_date_description") }}'
+        description: ""
         tests:
           - not_null
 
@@ -82,7 +82,7 @@ models:
         tests:
           - not_null
 
-      - name: end_station_name
+      - name: stop_station_name
         data_type: string
         tests:
           - not_null
@@ -99,7 +99,7 @@ models:
               values: ['Member', 'Non-Member']
               severity: warn
 
-- name: stg_citi_bike_2023
+  - name: stg_citi_bike_2023
     columns:
       - name: ride_id
         data_type: string
@@ -111,13 +111,13 @@ models:
       
       - name: start_time_date
         data_type: timestamp
-        description: '{{ doc("start_time_and_date_description") }}'
+        description: ""
         tests:
           - not_null
 
       - name: stop_time_date
         data_type: timestamp
-        description: '{{ doc("stop_time_and_date_description") }}'
+        description: ""
         tests:
           - not_null
 
@@ -126,7 +126,7 @@ models:
         tests:
           - not_null
 
-      - name: end_station_name
+      - name: stop_station_name
         data_type: string
         tests:
           - not_null

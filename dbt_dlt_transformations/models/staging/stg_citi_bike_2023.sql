@@ -5,7 +5,7 @@
 with bike_data as (
    select *,
       row_number() over(partition by ride_id, started_at) as rn
-   from {{ source('staging','stg_citi_bike_2023') }}
+   from {{ source('staging','citi_bike_2023') }}
    where ride_id is not null 
 )
 
