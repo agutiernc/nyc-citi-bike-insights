@@ -2,6 +2,13 @@
 
 -- Select the relevant columns from the 2023 data source and perform any necessary transformations
 
+with bike_data as (
+   select *,
+      row_number() over(partition by ride_id, started_at) as rn
+   from {{ source('staging','stg_citi_bike_2023') }}
+   where ride_id is not null 
+)
+
 select  
    -- identifiers
    {{ dbt.safe_cast("ride_id", api.Column.translate_type("string")) }} as ride_id,
@@ -15,4 +22,5 @@ select
    cast(started_at as timestamp) as start_time_date,
    cast(ended_at as timestamp) as stop_time_date,
 
-from {{ source('citi_bike_data', 'bike_trips_2023') }}
+from bike_data
+where rn = 1

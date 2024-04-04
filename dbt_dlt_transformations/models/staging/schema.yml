@@ -1,26 +1,139 @@
 version: 2
 
+sources:
+  - name: staging
+    database: nyc-citi-bike-28635
+    schema: citi_bike_data
+
+    tables:
+      - name: citi_bike_2019
+      - name: citi_bike_2020
+      - name: citi_bike_2023
+
 models:
-  - name: citi_bike_rides
+  - name: stg_citi_bike_2019
     columns:
       - name: ride_id
+        data_type: string
         tests:
-          - unique
-          - not_null
+          - unique:
+              severity: warn
+          - not_null:
+              severity: warn
+      
       - name: start_time_date
+        data_type: timestamp
         description: '{{ doc("start_time_and_date_description") }}'
+        tests:
+          - not_null
+
       - name: stop_time_date
+        data_type: timestamp
         description: '{{ doc("stop_time_and_date_description") }}'
+        tests:
+          - not_null
+
       - name: start_station_name
+        data_type: string
         tests:
           - not_null
+
       - name: end_station_name
+        data_type: string
         tests:
           - not_null
+      
+      - name: trip_duration_seconds
+        data_type: integer
+        tests:
+          - not_null
+
       - name: user_category
+        data_type: string
         tests:
           - accepted_values:
               values: ['Member', 'Non-Member']
-      - name: trip_duration_seconds
+              severity: warn
+
+- name: stg_citi_bike_2020
+    columns:
+      - name: ride_id
+        data_type: string
+        tests:
+          - unique:
+              severity: warn
+          - not_null:
+              severity: warn
+      
+      - name: start_time_date
+        data_type: timestamp
+        description: '{{ doc("start_time_and_date_description") }}'
         tests:
           - not_null
+
+      - name: stop_time_date
+        data_type: timestamp
+        description: '{{ doc("stop_time_and_date_description") }}'
+        tests:
+          - not_null
+
+      - name: start_station_name
+        data_type: string
+        tests:
+          - not_null
+
+      - name: end_station_name
+        data_type: string
+        tests:
+          - not_null
+
+      - name: trip_duration_seconds
+        data_type: integer
+        tests:
+          - not_null
+
+      - name: user_category
+        data_type: string
+        tests:
+          - accepted_values:
+              values: ['Member', 'Non-Member']
+              severity: warn
+
+- name: stg_citi_bike_2023
+    columns:
+      - name: ride_id
+        data_type: string
+        tests:
+          - unique:
+              severity: warn
+          - not_null:
+              severity: warn
+      
+      - name: start_time_date
+        data_type: timestamp
+        description: '{{ doc("start_time_and_date_description") }}'
+        tests:
+          - not_null
+
+      - name: stop_time_date
+        data_type: timestamp
+        description: '{{ doc("stop_time_and_date_description") }}'
+        tests:
+          - not_null
+
+      - name: start_station_name
+        data_type: string
+        tests:
+          - not_null
+
+      - name: end_station_name
+        data_type: string
+        tests:
+          - not_null
+
+      - name: user_category
+        data_type: string
+        tests:
+          - accepted_values:
+              values: ['Member', 'Non-Member']
+              severity: warn

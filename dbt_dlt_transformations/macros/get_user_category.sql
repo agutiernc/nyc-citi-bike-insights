@@ -6,7 +6,7 @@
    case 
       when {{ dbt.safe_cast("user_type", api.Column.translate_type("string")) }} = 'Subscriber'
          then 'Member' 
-      when {{ dbt.safe_cast("user_type", api.Column.translate_type("string")) }} = 'member_casual'
+      when {{ dbt.safe_cast("user_type", api.Column.translate_type("string")) }} = 'member'
          then 'Member' 
       else 'Non-Member' 
    end

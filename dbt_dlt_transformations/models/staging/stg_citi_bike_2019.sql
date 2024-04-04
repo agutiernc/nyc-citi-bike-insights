@@ -2,6 +2,13 @@
 
 -- Select the relevant columns from the 2019 data source and perform any necessary transformations
 
+with bike_data as (
+   select *,
+      row_number() over(partition by bikeid, starttime) as rn
+   from {{ source('staging','stg_citi_bike_2019') }}
+   where bikeid is not null 
+)
+
 select
    -- identifiers
    {{ dbt.safe_cast("bikeid", api.Column.translate_type("string")) }} as ride_id,
@@ -18,4 +25,5 @@ select
    -- trip info
    {{ dbt.safe_cast("tripduration", api.Column.translate_type("integer")) }} as trip_duration_seconds
 
-from {{ source('citi_bike_data', 'bike_trips_2019') }}
+from bike_data
+where rn = 1
