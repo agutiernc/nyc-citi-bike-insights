@@ -31,18 +31,5 @@ resource "google_storage_bucket" "nyc-citi-bike-bucket" {
 resource "google_bigquery_dataset" "citi_bike_data" {
   dataset_id = var.bq_dataset_name
   location = var.location
-}
-
-resource "google_bigquery_dataset" "stage_dataset" {
-  dataset_id = var.dbt_stg_dataset
-  project    = var.project
-  location   = var.region
-  delete_contents_on_destroy = true
-}
-
-resource "google_bigquery_dataset" "prod_dataset" {
-  dataset_id = var.dbt_cloud_dataset
-  project    = var.project
-  location   = var.region
   delete_contents_on_destroy = true
 }

@@ -1,6 +1,7 @@
-gcloud
-mage
-.dlt
+gcloud/
+.dlt/
+.config.toml
+.secrets.toml
 testing_dlt_load.py
 venv
 .DS_Store
@@ -14,4 +15,5 @@ logs/
 
 # legacy -- renamed to dbt_packages in v1
 dbt_modules/
+
 profiles.yml
