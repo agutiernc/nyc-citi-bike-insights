@@ -25,7 +25,16 @@ select
 from bike_data
 where rn = 1
 
+
+--  *** for use with dbt core or dbt cloud, other than dlt's dbt runner script ***
 -- dbt build --select <model.sql> --vars '{'is_test_run: false}'
+
+-- ~~~~~ IMPORTANT TEST ~~~~
+-- 1. Code below verifies and tests new tables in BigQuery 
+-- 2. Check row counts are 100 for each materialized table in BigQuery
+--      + Final test table will have 300 rows
+-- 3. Comment out below when ready to have the fully transformed data in BigQuery
+
 {% if var('is_test_run', default=true) %}
 
   limit 100

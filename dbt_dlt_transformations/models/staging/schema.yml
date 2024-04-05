@@ -2,9 +2,10 @@ version: 2
 
 sources:
   - name: staging
-    database: nyc-citi-bike-28635
-    schema: citi_bike_data
+    database: nyc-citi-bike-28635 # GCS project
+    schema: citi_bike_data # BigQuery dataset source
 
+    # BigQuery source tables
     tables:
       - name: citi_bike_2019
       - name: citi_bike_2020

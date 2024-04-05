@@ -13,13 +13,13 @@ models:
       
       - name: start_time_date
         data_type: timestamp
-        description: '{{ doc("start_time_and_date_description") }}'
+        description: ""
         tests:
           - not_null
 
       - name: stop_time_date
         data_type: timestamp
-        description: '{{ doc("stop_time_and_date_description") }}'
+        description: ""
         tests:
           - not_null
 

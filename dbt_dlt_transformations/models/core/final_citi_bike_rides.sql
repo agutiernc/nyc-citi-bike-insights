@@ -59,7 +59,7 @@ rides_unioned as (
   from bike2023_data
 )
 
--- remove rows with null/missing values
+-- filter out rows with null/missing values
 select
   *
 from rides_unioned
