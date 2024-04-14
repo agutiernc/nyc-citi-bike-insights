@@ -1,4 +1,6 @@
-dlt[filesystem]>=0.4.4
+dlt[filesystem]
 dlt[gs]
 dlt[parquet]
 dlt[bigquery]
+dlt[cli]
+tqdm
