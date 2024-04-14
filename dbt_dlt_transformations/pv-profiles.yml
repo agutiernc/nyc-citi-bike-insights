@@ -1,0 +1,13 @@
+nyc_citi_bike_rides: # this needs to match the profile in your dbt_project.yml file
+    target: dev
+    outputs:
+        dev:
+            type: bigquery
+            method: service-account
+            keyfile: # Add the full path to your GCS service account keyfile
+            project: # Replace this with your GCS project id
+            dataset: citi_bike_data # BigQuery dataset
+            threads: 1
+            timeout_seconds: 300
+            location: # add your BigQuery Region -- BigQuery datasets and tables should be same region
+            priority: interactiv

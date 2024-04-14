@@ -1,7 +1,8 @@
+variables.tf
 gcloud/
 .dlt/
-.config.toml
-.secrets.toml
+config.toml
+secrets.toml
 testing_dlt_load.py
 venv
 .DS_Store

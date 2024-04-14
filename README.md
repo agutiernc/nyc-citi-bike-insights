@@ -38,9 +38,9 @@ Through this analysis, we aim to better understand the impact of the pandemic on
 
 <ADD TABLE SCHEMAS HERE>
 
-## Table Schemas
+## Data Structure
 
-### Original Schemas
+### Original Table Schemas
 | 2019 | 2020 | 2023 |
 | :-- | :--- | :--- |
 | tripduration | tripduration | - |
@@ -60,9 +60,14 @@ Through this analysis, we aim to better understand the impact of the pandemic on
 | gender | gender | - |
 | - | - | rideable_type |
 
-### Final Schema
+#### Number of rows
+* **2019 -** 20,551,697
+* **2020 -** 19,506,857
+* **2023 -** 36,226,600
 
-| 2019 - 2023 |
+### Final Table Schema
+
+| 2019 - 2023 (Combined)|
 | :-- |
 | ride_id |
 | start_time_date |
@@ -72,6 +77,8 @@ Through this analysis, we aim to better understand the impact of the pandemic on
 | stop_station_name |
 | user_category |
 
+#### Number of rows
+* 76,285,697
 
 <ADD CHALLENGES HERE>
 

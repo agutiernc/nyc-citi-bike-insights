@@ -1,0 +1,7 @@
+[destination.bigquery]
+location="" # ADD GCS REGION FOR BIGQUERY (e.g. => "us-west1")
+
+
+http_timeout=15.0
+file_upload_timeout=1800.0
+retry_deadline=60.0
