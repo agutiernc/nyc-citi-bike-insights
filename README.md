@@ -1,6 +1,6 @@
 # Biking in the Big Apple: Trends and Insights in New York City's Citi Bike Program
 
-## Project Description
+## Project Overview 🚀
 
 This project analyzes data from New York City's Citi Bike share program for the years 2019, 2020, and 2023. The primary goal is to investigate ridership trends before the 2020 pandemic, during 2020, and in the year 2023. The project aims to answer the following questions:
 
@@ -14,17 +14,17 @@ By analyzing the data, we can gain insights into the popularity of certain areas
 Through this analysis, we aim to better understand the impact of the pandemic on bike-sharing in New York City and identify any lasting changes in ridership patterns and user behavior.
 
 
-## Tech Stack
+## Tech Stack 🖥 
 
 - **Terraform**: Used for Infrastructure as Code (IaC) to create a Google Cloud Storage (GCS) bucket and BigQuery dataset
 
-- **Google Cloud Storage (GCS)**: Used as a storage solution for the project data in parquet format
+- **Google Cloud Storage (GCS)**: Used as a data lake to store the raw Citi Bike data in parquet format
 
 - **Google BigQuery**: Used as the data warehouse for storing and analyzing the Citi Bike data
 
 - **PyArrow**: Used in conjunction with the Data Load Tool (dlt) for the initial data pipeline
 
-- **Data Load Tool (dlt)**: Utilized for creating data pipelines, dbt transformations, and setting up GitHub Actions
+- **Data Load Tool (dlt)**: Utilized for the ETL process, creating data pipelines, dbt transformations, and setting up GitHub Actions
 
 - **dbt (Data Build Tool)**: Employed for performing data transformations and running tests on the data stored in BigQuery
 
@@ -32,15 +32,11 @@ Through this analysis, we aim to better understand the impact of the pandemic on
 
 - **Google Looker Studio**: Used for creating a dashboard to visualize the analyzed Citi Bike data
 
-<ADD TECH FLOW HERE>
+<ADD TECH FLOW DIAGRAM HERE>
 
-<ADD DASHBOARD HERE>
+## Data Structure 🧱
 
-<ADD TABLE SCHEMAS HERE>
-
-## Data Structure
-
-### Original Table Schemas
+### Raw Tables
 | 2019 | 2020 | 2023 |
 | :-- | :--- | :--- |
 | tripduration | tripduration | - |
@@ -65,7 +61,7 @@ Through this analysis, we aim to better understand the impact of the pandemic on
 * **2020 -** 19,506,857
 * **2023 -** 36,226,600
 
-### Final Table Schema
+### Final Materialized Table
 
 | 2019 - 2023 (Combined)|
 | :-- |
@@ -80,6 +76,11 @@ Through this analysis, we aim to better understand the impact of the pandemic on
 #### Number of rows
 * 76,285,697
 
-<ADD CHALLENGES HERE>
+## Analysis 📊
+<p align="center">
+    <img src="images/nyc-citi-bike-dashboard.png">
+</p>
 
-<ADD INSTRUCTIONS HERE>
+## Instructions 🧭
+
+<ADD CHALLENGES HERE>

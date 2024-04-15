@@ -18,5 +18,3 @@ logs/
 dbt_modules/
 
 profiles.yml
-
-/images
