@@ -2,8 +2,8 @@ version: 2
 
 sources:
   - name: staging
-    database: nyc-citi-bike-28635 # GCS BigQuery project name
-    schema: citi_bike_data # BigQuery dataset source
+    database:  # Add GCS BigQuery project name
+    schema: citi_bike_data # BigQuery dataset source -- external tables
 
     # BigQuery source tables
     tables:

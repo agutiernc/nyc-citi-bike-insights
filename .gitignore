@@ -1,9 +1,11 @@
-variables.tf
 gcloud/
+variables.tf
+
+## === for dlt ===
 .dlt/
 config.toml
 secrets.toml
-testing_dlt_load.py
+
 venv
 .DS_Store
 
@@ -18,3 +20,6 @@ logs/
 dbt_modules/
 
 profiles.yml
+
+testing_dlt_load.py
+schema-copy.yml
