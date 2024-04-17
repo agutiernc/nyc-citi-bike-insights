@@ -20,7 +20,8 @@ mv ./dlt_data_load/.dlt/pv-config.toml ./dlt_data_load/.dlt/config.toml
 mv ./dlt_data_load/.dlt/pv-secrets.toml ./dlt_data_load/.dlt/secrets.toml
 
 mv ./dbt_dlt_transformations/.dlt/pv-config.toml ./dbt_dlt_transformations/.dlt/config.toml
-mv ./dbt_dlt_transformations/.dlt/pv-secrets.toml ./dbt_dlt_transformationsd/.dlt/secrets.toml
+mv ./dbt_dlt_transformations/.dlt/pv-secrets.toml ./dbt_dlt_transformations/.dlt/secrets.toml
+mv ./dbt_dlt_transformations/pv-profiles.yml ./dbt_dlt_transformations/profiles.yml
 
 EOL
 

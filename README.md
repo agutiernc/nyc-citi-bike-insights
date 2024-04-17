@@ -81,6 +81,84 @@ Through this analysis, we aim to better understand the impact of the pandemic on
     <img src="images/nyc-citi-bike-dashboard.png">
 </p>
 
-## Instructions 🧭
+## Instructions to Replicate the Project 🧭
+
+### Step 1: Set up Google Cloud
+1. Create a [Google Cloud account](https://cloud.google.com) if you don't have one already.  
+   <span style="color:yellow">*Note:*</span> Google Cloud offers a $300 credit that's valid for 90 days, which you can use for this project.
+2. Create a *new project* and *project ID* within Google Cloud. You can do this either through the [Google Cloud Console](https://cloud.google.com/resource-manager/docs/creating-managing-projects) or using the [Google Cloud SDK CLI](https://cloud.google.com/sdk/docs/install).  
+  If you prefer the CLI approach, follow [the steps in this video](https://www.youtube.com/watch?v=YGH0LD6YUY0).
+3. Create a *Service Account* through the **IAM (Identity and Access Management)** section in Google Cloud Console. Assign the following permission roles to the service account:
+   - Viewer
+   - Storage Admin
+   - Storage Object Admin
+   - BigQuery Admin
+   - Owner (if needed)
+4. Generate and download a *JSON key* for the newly created *Service Account*. It will be used when interacting with Terraform, dbt and dlt scripts, and if using Google Cloud SDK CLI.  
+   <span style="color:yellow">Note:</span> Save the JSON key to a local folder. If the folder is located within the project directory, consider adding it to your `.gitignore` file to prevent the key from being accidentally committed to version control.
+
+### Step 2: Clone this repo
+1. Clone me:  
+   ```
+   git clone https://github.com/agutiernc/nyc-citi-bike-insights.git
+   ```
+2. Switch to project directory  
+   ```
+   cd nyc-citi-bike-insights
+   ```
+3. Run setup bash script, in a terminal, that will rename secret directories and files (that have been added to `.gitignore`):
+   ```shell
+   chmod +x setup.sh # Make it executable
+
+   ./setup.sh # To run it  
+   ```
+
+
+### Step 3: Set up Terraform
+
+Detailed instructions for setting up Terraform can be found in the [Terraform directory](./terraform/).
+
+### Step 4: Create a Python virtual environment in the project directory, install the requirements, and activate it:
+```shell
+python -m venv venv
+
+pip install -r requirements.txt
+
+source venv/bin/activate # to activate
+```
+
+### Step 5: Perform ETL using Data Load Tool (dlt)
+
+Detailed instructions for performing the ETL process using the Data Load Tool (dlt) can be found in the [dlt_data_load directory](./dlt_data_load/).
+
+### Step 6: Create External Tables in BigQuery
+
+In this step, you will create 3 external tables in BigQuery using the parquet files stored in the GCS bucket. You have two options to accomplish this:
+
+#### Option 1: Using SQL
+
+1. Navigate to the `sql_external_tables` folder in the project directory. It contains a file named `parquet_to_external_tables.sql`.
+
+2. Open the BigQuery dataset `citi_bike_data` in the Google Cloud Console and open a new Query tab.
+
+3. Paste the SQL commands from the `parquet_to_external_tables.sql` file into the Query editor.
+
+4. Edit the fields in the SQL commands with the necessary information, such as the project ID, dataset name, and table names.
+
+5. Run the query to create the external tables.
+
+#### Option 2: Using Google Cloud Console GUI
+
+[Follow the step-by-step guide in this PDF document](https://drive.google.com/file/d/1GIi6xnS4070a8MUlIg-ozITt485_-ePB/view?usp=drive_link) to create the external tables using the Google Cloud Console GUI within BigQuery. 
+
+<span style="color:yellow">Note:</span> Skip to step 3 in the PDF document.
+
+Both options will create three external tables in BigQuery, representing the raw data for each year (2019, 2020, and 2023) stored in the parquet files.
+
+### Step 7: Data Transformations using dlt and dbt
+
+In this step, you will perform data transformations on the raw data stored in the external tables to create a single materialized table. The transformations will be done using the Data Load Tool (dlt) to create the pipelines for BigQuery and the dbt (Data Build Tool) runner to execute the transformations.
+
+Detailed instructions and necessary files for this step can be found in the [dbt_dlt_transformations directory](./dbt_dlt_transformations/).
 
 <ADD CHALLENGES HERE>
