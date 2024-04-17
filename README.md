@@ -96,7 +96,8 @@ Through this analysis, we aim to better understand the impact of the pandemic on
    - BigQuery Admin
    - Owner (if needed)
 4. Generate and download a *JSON key* for the newly created *Service Account*. It will be used when interacting with Terraform, dbt and dlt scripts, and if using Google Cloud SDK CLI.  
-   <span style="color:yellow">Note:</span> Save the JSON key to a local folder. If the folder is located within the project directory, consider adding it to your `.gitignore` file to prevent the key from being accidentally committed to version control.
+   
+   **Note:** Save the JSON key to a local folder. If the folder is located within the project directory, consider adding it to your `.gitignore` file to prevent the key from being accidentally committed to version control.
 
 ### Step 2: Clone this repo
 1. Clone me:  
@@ -144,15 +145,15 @@ In this step, 3 external tables are created in BigQuery using the parquet files 
 
 3. Paste the SQL commands from the `parquet_to_external_tables.sql` file into the Query editor.
 
-4. Edit the fields in the SQL commands with the necessary information, such as the project ID, dataset name, and table names.
+4. Edit the fields in the SQL commands with the necessary information, such as the `project name` and the `gsutil URI` for the `.parquet` files that are in the bucket folders.
 
-5. Run the query to create the external tables.
+5. Run the query, one command at a time, to create the external tables.
 
 #### Option 2: Using Google Cloud Console GUI
 
 [Follow the step-by-step guide in this PDF document](https://drive.google.com/file/d/1GIi6xnS4070a8MUlIg-ozITt485_-ePB/view?usp=drive_link), skip to step 3, to create the external tables using the Google Cloud Console GUI within BigQuery.
 
-Both options will create 3 external tables in BigQuery, representing the raw data for each year (2019, 2020, and 2023) stored in the parquet files.
+- The *Dataset* will be `citi_bike_data` and name each *external table* as follows: `citi_bike_2019`, `citi_bike_2020`, `citi_bike_2023`
 
 ### Step 7: Data Transformations using dlt and dbt
 
