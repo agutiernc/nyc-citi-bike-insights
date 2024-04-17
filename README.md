@@ -84,10 +84,11 @@ Through this analysis, we aim to better understand the impact of the pandemic on
 ## Instructions to Replicate the Project 🧭
 
 ### Step 1: Set up Google Cloud
-1. Create a [Google Cloud account](https://cloud.google.com) if you don't have one already.  
-   <span style="color:yellow">*Note:*</span> Google Cloud offers a $300 credit that's valid for 90 days, which you can use for this project.
+1. Create a [Google Cloud account](https://cloud.google.com) if you don't have one already. Google Cloud offers a $300 credit that's valid for 90 days, which can be used for this project.
+   
 2. Create a *new project* and *project ID* within Google Cloud. You can do this either through the [Google Cloud Console](https://cloud.google.com/resource-manager/docs/creating-managing-projects) or using the [Google Cloud SDK CLI](https://cloud.google.com/sdk/docs/install).  
   If you prefer the CLI approach, follow [the steps in this video](https://www.youtube.com/watch?v=YGH0LD6YUY0).
+
 3. Create a *Service Account* through the **IAM (Identity and Access Management)** section in Google Cloud Console. Assign the following permission roles to the service account:
    - Viewer
    - Storage Admin
@@ -133,11 +134,11 @@ Detailed instructions for performing the ETL process using the Data Load Tool (d
 
 ### Step 6: Create External Tables in BigQuery
 
-In this step, you will create 3 external tables in BigQuery using the parquet files stored in the GCS bucket. You have two options to accomplish this:
+In this step, 3 external tables are created in BigQuery using the parquet files stored in the GCS bucket. You have two options to accomplish this:
 
 #### Option 1: Using SQL
 
-1. Navigate to the `sql_external_tables` folder in the project directory. It contains a file named `parquet_to_external_tables.sql`.
+1. Open `parquet_to_external_tables.sql`, in the `sql_external_tables` folder, and copy the SQL commands.
 
 2. Open the BigQuery dataset `citi_bike_data` in the Google Cloud Console and open a new Query tab.
 
@@ -149,15 +150,13 @@ In this step, you will create 3 external tables in BigQuery using the parquet fi
 
 #### Option 2: Using Google Cloud Console GUI
 
-[Follow the step-by-step guide in this PDF document](https://drive.google.com/file/d/1GIi6xnS4070a8MUlIg-ozITt485_-ePB/view?usp=drive_link) to create the external tables using the Google Cloud Console GUI within BigQuery. 
+[Follow the step-by-step guide in this PDF document](https://drive.google.com/file/d/1GIi6xnS4070a8MUlIg-ozITt485_-ePB/view?usp=drive_link), skip to step 3, to create the external tables using the Google Cloud Console GUI within BigQuery.
 
-<span style="color:yellow">Note:</span> Skip to step 3 in the PDF document.
-
-Both options will create three external tables in BigQuery, representing the raw data for each year (2019, 2020, and 2023) stored in the parquet files.
+Both options will create 3 external tables in BigQuery, representing the raw data for each year (2019, 2020, and 2023) stored in the parquet files.
 
 ### Step 7: Data Transformations using dlt and dbt
 
-In this step, you will perform data transformations on the raw data stored in the external tables to create a single materialized table. The transformations will be done using the Data Load Tool (dlt) to create the pipelines for BigQuery and the dbt (Data Build Tool) runner to execute the transformations.
+In this step, data transformations are performed on the raw data stored in the external tables to create a single materialized table. The transformations will be done using the Data Load Tool (dlt) to create the pipelines for BigQuery and the dbt (Data Build Tool) runner to execute the transformations.
 
 Detailed instructions and necessary files for this step can be found in the [dbt_dlt_transformations directory](./dbt_dlt_transformations/).
 
