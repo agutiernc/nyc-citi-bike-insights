@@ -161,8 +161,6 @@ In this step, data transformations are performed on the raw data stored in the e
 
 Detailed instructions and necessary files for this step can be found in the [dbt_dlt_transformations directory](./dbt_dlt_transformations/).
 
-Great! Let's add the final step to deploy the pipelines with GitHub Actions using dlt. Here's how you can structure it in the README:
-
 ### Step 8: Deploy Pipelines with GitHub Actions using dlt
 
 In this step, we'll use dlt to deploy our pipelines with GitHub Actions, enabling automated execution every quarter of the year.
