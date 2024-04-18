@@ -32,7 +32,9 @@ Through this analysis, we aim to better understand the impact of the pandemic on
 
 - **Google Looker Studio**: Used for creating a dashboard to visualize the analyzed Citi Bike data
 
-<ADD TECH FLOW DIAGRAM HERE>
+<p align="center">
+    <img src="images/de-tech-flow.gif">
+</p>
 
 ## Data Structure 🧱
 
@@ -200,8 +202,4 @@ Steps:
      git push origin
      ```
 
-That's it! Your pipelines are now deployed with GitHub Actions and will run automatically every quarter of the year.
-
-With this setup, your data pipelines will be automatically triggered and executed every three months, ensuring that your data remains up to date and ready for analysis.
-
-<ADD CHALLENGES HERE>
+That's it! With this setup, the data pipelines will be automatically triggered and executed every three months, ensuring that your data remains up to date and ready for analysis.
