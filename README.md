@@ -161,4 +161,49 @@ In this step, data transformations are performed on the raw data stored in the e
 
 Detailed instructions and necessary files for this step can be found in the [dbt_dlt_transformations directory](./dbt_dlt_transformations/).
 
+Great! Let's add the final step to deploy the pipelines with GitHub Actions using dlt. Here's how you can structure it in the README:
+
+### Step 8: Deploy Pipelines with GitHub Actions using dlt
+
+In this step, we'll use dlt to deploy our pipelines with GitHub Actions, enabling automated execution every quarter of the year.
+
+Prerequisites:
+- The project should be hosted in a GitHub repository.
+
+Steps:
+
+1. Deploy the ETL pipeline:
+   - Navigate to the `dlt_data_load` directory in the terminal
+   - Run:
+     ```
+     dlt deploy load_bike_data_to_gcs.py github-action --schedule "0 0 1 */3 *"
+     ```
+
+2. Deploy the dbt transformations pipeline:
+   - Switch to `dbt_dlt_transformations` directory.
+   - Run:
+     ```
+     dlt deploy dlt_dbt_runner.py github-action --schedule "0 0 1 */3 *"
+     ```
+
+   These commands create GitHub Actions workflow `.yml` files in the `.github/workflows` directory with the necessary environment variables.
+
+3. Add secret values to GitHub:
+   - After running each deploy command, dlt will print out each `Name` and `Secret` pairs.
+   - Copy and paste each `Name` and `Secret` pair to the GitHub UI, which can be accessed at the link printed by the dlt deploy command (e.g., `github.com/.../settings/secrets/actions`).
+
+4. Commit and push the changes to GitHub:
+   - Add and commit the changes to your local repository:
+     ```
+     git add . && git commit -m 'pipeline deployed with github action'
+     ```
+   - Push the changes to the GitHub repository:
+     ```
+     git push origin
+     ```
+
+That's it! Your pipelines are now deployed with GitHub Actions and will run automatically every quarter of the year.
+
+With this setup, your data pipelines will be automatically triggered and executed every three months, ensuring that your data remains up to date and ready for analysis.
+
 <ADD CHALLENGES HERE>

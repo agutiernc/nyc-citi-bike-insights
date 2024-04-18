@@ -1,7 +1,7 @@
 -- *** RUN A SINGLE SQL COMMAND AT A TIME ***
 
--- 1. ADD YOUR BigQuery PROJECT NAME the to each command
--- 2. Copy the gsutil URI for the parquet files in the bucket folders
+-- 1. Add your BigQuery PROJECT NAME to each command
+-- 2. Copy the gsutil URI for the parquet files from the bucket folders
 
 CREATE OR REPLACE EXTERNAL TABLE `<PROJECT_NAME>.citi_bike_data.citi_bike_2019`
 OPTIONS (

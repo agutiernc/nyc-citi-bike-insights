@@ -32,7 +32,7 @@ With these steps completed, you have successfully performed the ETL process usin
 
 - **Schema Handling:** With dlt and PyArrow, we can efficiently handle mixed data types within columns and adjust the schema accordingly. This flexibility ensures data integrity and consistency throughout the pipeline.
 
-- **Integration with dbt:** dlt provides a seamless integration with dbt through its *dbt runner*,]. This allows us to leverage dbt for data transformations, in Step 7, without the need for a separate dbt Cloud account or installing dbt Core locally. dlt takes care of the necessary configurations, making the setup process more streamlined.
+- **Integration with dbt:** dlt provides a seamless integration with dbt through its *dbt runner*. This allows us to leverage dbt for data transformations, in Step 7, without the need for a separate dbt Cloud account or installing dbt Core locally. dlt takes care of the necessary configurations, making the setup process more streamlined.
 
 - **GCS Configuration:** dlt simplifies the configuration of Google Cloud Storage (GCS) settings, making it easier to connect and interact with GCS.
 
