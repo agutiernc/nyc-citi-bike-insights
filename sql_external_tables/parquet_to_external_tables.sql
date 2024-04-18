@@ -26,4 +26,4 @@ OPTIONS (
 
 SELECT COUNT(*) FROM `<PROJECT_NAME>.citi_bike_data.citi_bike_2019`;
 SELECT COUNT(*) FROM `<PROJECT_NAME>.citi_bike_data.citi_bike_2020`;
-SELECT COUNT(*) FROM `<PROJECT_NAME>.citi_bike_data.citi_bike_2019`;
+SELECT COUNT(*) FROM `<PROJECT_NAME>.citi_bike_data.citi_bike_2023`;

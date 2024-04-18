@@ -83,6 +83,8 @@ Through this analysis, we aim to better understand the impact of the pandemic on
     <img src="images/nyc-citi-bike-dashboard.png">
 </p>
 
+Link to dashboard is [here](https://lookerstudio.google.com/s/qN70pJ0jWfY). (If the dashboard doesn't display, it's due to the GCS credits ending)
+
 ## Instructions to Replicate the Project 🧭
 
 ### Step 1: Set up Google Cloud
