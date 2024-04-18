@@ -8,7 +8,7 @@
 
 echo "Renaming secret files and directories"
 
-# Rename secret directories
+# Rename to hidden directories
 mv ./dlt_data_load/dot-dlt ./dlt_data_load/.dlt
 
 mv ./dbt_dlt_transformations/dot-dlt ./dbt_dlt_transformations/.dlt
@@ -23,7 +23,6 @@ mv ./dbt_dlt_transformations/.dlt/pv-config.toml ./dbt_dlt_transformations/.dlt/
 mv ./dbt_dlt_transformations/.dlt/pv-secrets.toml ./dbt_dlt_transformations/.dlt/secrets.toml
 mv ./dbt_dlt_transformations/pv-profiles.yml ./dbt_dlt_transformations/profiles.yml
 
-EOL
 
 echo "Renaming successful! Please, edit the contents of the files with your info"
 echo "The secret files and directories have already been listed in gitignore"
