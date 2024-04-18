@@ -179,17 +179,10 @@ Steps:
      dlt deploy load_bike_data_to_gcs.py github-action --schedule "0 0 1 */3 *"
      ```
 
-2. Deploy the dbt transformations pipeline:
-   - Switch to `dbt_dlt_transformations` directory.
-   - Run:
-     ```
-     dlt deploy dlt_dbt_runner.py github-action --schedule "0 0 1 */3 *"
-     ```
-
    These commands create GitHub Actions workflow `.yml` files in the `.github/workflows` directory with the necessary environment variables.
 
 3. Add secret values to GitHub:
-   - After running each deploy command, dlt will print out each `Name` and `Secret` pairs.
+   - After running the deploy command, dlt will print out each `Name` and `Secret` pairs.
    - Copy and paste each `Name` and `Secret` pair to the GitHub UI, which can be accessed at the link printed by the dlt deploy command (e.g., `github.com/.../settings/secrets/actions`).
 
 4. Commit and push the changes to GitHub:
